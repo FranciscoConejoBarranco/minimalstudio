@@ -16,3 +16,12 @@
     font-family: InterVariable, sans-serif;
   }
 }
+
+svg {
+  
+  display: block;
+  max-width: 100%;
+  
+}
+
+

@@ -1,168 +1,77 @@
-<section class="scroll-mt-24" id="work">
+<section id="tiktok-videos" class="py-24 px-8">
+  <h2 class="text-2xl font-semibold text-center mb-8">Algunos de mis videos</h2>
 
-  <div class="px-8 md:px-12 py-24 max-w-2xl mx-auto">
-    <h2 class="text-xl tracking-tighter font-light text-black">
-      Some of Minimal work.
-    </h2>
-
-    <div
-      class="flex flex-col w-full"
-      x-data="{
-      skip: 1,
-      atBeginning: false,
-      atEnd: false,
-      next() {
-          this.to((current, offset) => current + (offset * this.skip))
-      },
-      prev() {
-          this.to((current, offset) => current - (offset * this.skip))
-      },
-      to(strategy) {
-          let slider = this.$refs.slider
-          let current = slider.scrollLeft
-          let offset = slider.firstElementChild.getBoundingClientRect().width
-          slider.scrollTo({ left: strategy(current, offset), behavior: 'smooth' })
-      },
-      focusableWhenVisible: {
-          'x-intersect:enter'() {
-              this.$el.removeAttribute('tabindex')
-          },
-          'x-intersect:leave'() {
-              this.$el.setAttribute('tabindex', '-1')
-          },
-      },
-      disableNextAndPreviousButtons: {
-          'x-intersect:enter.threshold.05'() {
-              let slideEls = this.$el.parentElement.children
-              // If this is the first slide.
-              if (slideEls[0] === this.$el) {
-                  this.atBeginning = true
-              // If this is the last slide.
-              } else if (slideEls[slideEls.length-1] === this.$el) {
-                  this.atEnd = true
-              }
-          },
-          'x-intersect:leave.threshold.05'() {
-              let slideEls = this.$el.parentElement.children
-              // If this is the first slide.
-              if (slideEls[0] === this.$el) {
-                  this.atBeginning = false
-              // If this is the last slide.
-              } else if (slideEls[slideEls.length-1] === this.$el) {
-                  this.atEnd = false
-              }
-          },
-      },
-  }"
-    >
-      <div
-        class="flex flex-col w-full bg-white rounded-3xl pt-4  mt-4"
-        aria-labelledby="carousel-label"
-        role="region"
-        tabindex="0"
-        x-on:keydown.left="prev"
-        x-on:keydown.right="next"
-      >
-        <h2 class="sr-only" hidden="" id="carousel-label">Carousel</h2><span
-          class="sr-only"
-          hidden=""
-          id="carousel-content-label">Carousel</span
-        >
-        <div class="items-center justify-center inline-flex mx-auto space-x-2">
-          <button
-            class="bg-zinc-200 hover:bg-zinc-200 focus:bg-zinc-50 rounded-lg inline-flex items-center text-center text-black p-2 ring-1 ring-zinc-300"
-            :class="{ 'opacity-50 cursor-not-allowed': atBeginning }"
-            :aria-disabled="atBeginning"
-            :tabindex="atEnd ? -1 : 0"
-            x-on:click="prev"
-            tabindex="0"
-            ><span aria-hidden="true"
-              ><svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-3 w-3"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                stroke-width="2"
-                ><path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M15 19l-7-7 7-7"></path>
-              </svg>
-            </span><span class="sr-only">Skip to previous slide page</span
-            ></button
-          >
-          <button
-            class="bg-zinc-200 hover:bg-zinc-200 focus:bg-zinc-50 rounded-lg inline-flex items-center text-center text-black p-2 ring-1 ring-zinc-300"
-            :class="{ 'opacity-50 cursor-not-allowed': atEnd }"
-            :aria-disabled="atEnd"
-            :tabindex="atEnd ? -1 : 0"
-            x-on:click="next"
-            tabindex="0"
-            ><span aria-hidden="true"
-              ><svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-3 w-3 text-zinc-600 hover:text-white"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                stroke-width="2"
-                ><path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M9 5l7 7-7 7"></path>
-              </svg>
-            </span><span class="sr-only">Skip to next slide page</span></button
-          >
-        </div>
-
-        <div
-          class="flex gap-3 overflow-x-scroll scrollbar-hide snap-mandatory snap-x w-full"
-          role="listbox"
-          aria-labelledby="carousel-content-label"
-          tabindex="0"
-          x-ref="slider"
-        >
-          <div
-            class="items-center justify-center w-full flex flex-col shrink-0 snap-start"
-            role="option"
-            x-bind="disableNextAndPreviousButtons"
-          >
-            <img src="/alfred.png" alt="" />
-          </div>
-          <div
-            class="items-center justify-center w-full flex flex-col shrink-0 snap-start"
-            role="option"
-            x-bind="disableNextAndPreviousButtons"
-          >
-            <img src="/navy.png" alt="" />
-          </div>
-          <div
-            class="items-center justify-center w-full flex flex-col
-          shrink-0 snap-start"
-            role="option"
-            x-bind="disableNextAndPreviousButtons"
-          >
-            <img src="/riflesso.png" alt="" />
-          </div>
-           <div
-            class="items-center justify-center w-full flex flex-col
-          shrink-0 snap-start"
-            role="option"
-            x-bind="disableNextAndPreviousButtons"
-          >
-            <img src="/bal.png" alt="" />
-          </div>
-           <div
-            class="items-center justify-center w-full flex flex-col
-          shrink-0 snap-start"
-            role="option"
-            x-bind="disableNextAndPreviousButtons"
-          >
-            <img src="/wb.png" alt="" />
-          </div>
-        </div>
-      </div>
+  <div class="flex flex-wrap gap-8 justify-center overflow-x-auto">
+    
+    <!-- Video 1 -->
+    <div class="tiktok-video-container flex justify-center items-center w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+      <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@guillecstr_/video/7414440498192026912" data-video-id="7414440498192026912" style="max-width: 100%; min-width: 325px;">
+        <section>
+          <a target="_blank" title="@guillecstr_" href="https://www.tiktok.com/@guillecstr_?refer=embed">@guillecstr_</a> AFTERMOVIE FERIA ARDALES! 🎧🕺 🎥@N.A. Visuals  
+          <a title="dj" target="_blank" href="https://www.tiktok.com/tag/dj?refer=embed">#dj</a>
+          <a title="music" target="_blank" href="https://www.tiktok.com/tag/music?refer=embed">#music</a>
+          <a title="parati" target="_blank" href="https://www.tiktok.com/tag/parati?refer=embed">#parati</a>
+          <a title="trend" target="_blank" href="https://www.tiktok.com/tag/trend?refer=embed">#trend</a>
+          <a target="_blank" title="♬ sonido original - Guille Castro" href="https://www.tiktok.com/music/sonido-original-7414440541871508257?refer=embed">♬ sonido original - Guille Castro</a>
+        </section>
+      </blockquote>
+      <!-- El script se carga solo cuando el video entra en el viewport -->
+      <script data-src="https://www.tiktok.com/embed.js" async></script>
     </div>
+
+    <!-- Video 2 -->
+    <div class="tiktok-video-container flex justify-center items-center w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+      <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@guillecstr_/video/7286794414695910688" data-video-id="7286794414695910688" style="max-width: 100%; min-width: 325px;">
+        <section>
+          <a target="_blank" title="@guillecstr_" href="https://www.tiktok.com/@guillecstr_?refer=embed">@guillecstr_</a> AFTERMOVIE FERIA ALCALÁ DEL VALLE  🎥 @ELNIEVAS  
+          <a title="dj" target="_blank" href="https://www.tiktok.com/tag/dj?refer=embed">#dj</a>
+          <a title="feria" target="_blank" href="https://www.tiktok.com/tag/feria?refer=embed">#FERIA</a>
+          <a title="music" target="_blank" href="https://www.tiktok.com/tag/music?refer=embed">#music</a>
+          <a target="_blank" title="♬ sonido original - Guille Castro" href="https://www.tiktok.com/music/sonido-original-7286794439736380193?refer=embed">♬ sonido original - Guille Castro</a>
+        </section>
+      </blockquote>
+      <!-- El script se carga solo cuando el video entra en el viewport -->
+      <script data-src="https://www.tiktok.com/embed.js" async></script>
+    </div>
+
+    <!-- Video 3 -->
+    <div class="tiktok-video-container flex justify-center items-center w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+      <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@guillecstr_/video/7269053715632508193" data-video-id="7269053715632508193" style="max-width: 100%; min-width: 325px;">
+        <section>
+          <a target="_blank" title="@guillecstr_" href="https://www.tiktok.com/@guillecstr_?refer=embed">@guillecstr_</a> AFTERMOVIE <a title="feria" target="_blank" href="https://www.tiktok.com/tag/feria?refer=embed">#FERIA</a> MALAGA 📍CASETA ADN  🎥 @ELNIEVAS  
+          <a title="dj" target="_blank" href="https://www.tiktok.com/tag/dj?refer=embed">#dj</a>
+          <a title="parati" target="_blank" href="https://www.tiktok.com/tag/parati?refer=embed">#parati</a>
+          <a title="trend" target="_blank" href="https://www.tiktok.com/tag/trend?refer=embed">#trend</a>
+          <a title="music" target="_blank" href="https://www.tiktok.com/tag/music?refer=embed">#music</a>
+          <a target="_blank" title="♬ sonido original - Guille Castro" href="https://www.tiktok.com/music/sonido-original-7269053722486295329?refer=embed">♬ sonido original - Guille Castro</a>
+        </section>
+      </blockquote>
+      <!-- El script se carga solo cuando el video entra en el viewport -->
+      <script data-src="https://www.tiktok.com/embed.js" async></script>
+    </div>
+
   </div>
 </section>
+
+<script>
+  // Intersection Observer para cargar los videos solo cuando sean visibles
+  document.addEventListener('DOMContentLoaded', function () {
+    const videos = document.querySelectorAll('.tiktok-video-container');
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const script = entry.target.querySelector('script');
+          if (script && script.dataset.src) {
+            script.src = script.dataset.src; // Cargar el script de TikTok
+            observer.unobserve(entry.target); // Dejar de observar este elemento
+          }
+        }
+      });
+    }, { threshold: 0.5 }); // Cargar el video cuando el 50% sea visible
+
+    videos.forEach(video => {
+      observer.observe(video);
+    });
+  });
+</script>

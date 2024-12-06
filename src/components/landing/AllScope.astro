@@ -1,54 +1,34 @@
----
-import { designwork } from "../../data/designwork.json";
-import { devwork } from "../../data/devwork.json";
----
-
-<section class="scroll-mt-24" id="services">
-  <div class="px-8 md:px-12 py-12 max-w-2xl mx-auto">
-    <div
-      class="col-span-full lg:col-span-2 w-full rounded-4xl h-full items-center inline-flex text-black"
-    >
-      <h2 class="text-3xl tracking-tighter font-light">
-        What's on tap.
-      </h2>
+<section class="scroll-mt-24 bg-zinc-50" id="services">
+  <div class="px-8 md:px-12 py-16 max-w-3xl mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-semibold text-black">Servicios que ofrezco</h2>
+      <p class="text-lg text-zinc-600 mt-4">Llevo la música a tu evento con sets personalizados y mucho más.</p>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-px mt-8">
-      <div class="p-8 bg-white rounded-3xl">
-        <div class="inline-flex items-center border-b w-full border-white/10">
-          <p class="text-2xl text-black">Design</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-12">
+      <div class="p-8 bg-white shadow-lg rounded-3xl hover:shadow-2xl transition-shadow duration-300">
+        <div class="inline-flex items-center border-b w-full border-zinc-300 pb-4">
+          <p class="text-2xl font-semibold text-black">Eventos Privados</p>
         </div>
-        <div class="divide-y divide-white/10 mt-4">
-          {
-            designwork.map((template) => (
-              <>
-                <div class=" flex flex-col sm:flex-row justify-between gap-4 lg:items-end">
-                  <p class="font-medium leading-6 text-zinc-500 text-sm flex gap-2 items-center">
-                    ⏤
-                    {template.title}
-                  </p>
-                </div>
-              </>
-            ))
-          }
+        <div class="mt-6">
+          <p class="font-medium text-zinc-500 mb-4">
+            ⏤ Bodas, bautizos, cumpleaños y más. ¡Pincho en tu evento privado para darle un toque único!
+          </p>
+          <p class="font-medium text-zinc-500">
+            ⏤ Creación de un ambiente inolvidable para cualquier ocasión especial.
+          </p>
         </div>
       </div>
-      <div class="p-8 bg-white rounded-3xl">
-        <div class="inline-flex items-center border-b w-full border-white/10">
-          <p class="text-2xl text-black">Development</p>
+      <div class="p-8 bg-white shadow-lg rounded-3xl hover:shadow-2xl transition-shadow duration-300">
+        <div class="inline-flex items-center border-b w-full border-zinc-300 pb-4">
+          <p class="text-2xl font-semibold text-black">Sets Personalizados</p>
         </div>
-        <div class="divide-y divide-white/10 mt-4">
-          {
-            devwork.map((template) => (
-              <>
-                <div class=" flex flex-col sm:flex-row justify-between gap-4 lg:items-end">
-                  <p class="font-medium leading-6 text-zinc-500 text-sm flex gap-2 items-center">
-                    ⏤
-                    {template.title}
-                  </p>
-                </div>
-              </>
-            ))
-          }
+        <div class="mt-6">
+          <p class="font-medium text-zinc-500 mb-4">
+            ⏤ Sets musicales a medida para cualquier evento o momento especial. ¡Tú eliges el estilo y yo lo hago realidad!
+          </p>
+          <p class="font-medium text-zinc-500">
+            ⏤ Música adaptada a tus gustos y necesidades, creando la atmósfera perfecta para ti.
+          </p>
         </div>
       </div>
     </div>
